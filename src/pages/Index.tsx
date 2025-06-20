@@ -180,10 +180,10 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Scrollable Neologisms with proper height */}
-              <div className="flex-1 overflow-hidden">
-                <div className="h-full overflow-y-auto pr-2">
-                  <div className="space-y-4">
+              {/* Scrollable Neologisms with visible scrollbar */}
+              <div className="flex-1 min-h-0">
+                <ScrollArea className="h-full">
+                  <div className="space-y-4 pr-4">
                     {filteredNeologisms.map((neologism) => (
                       <div key={neologism.id} onClick={() => handleNeologismClick(neologism)}>
                         <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300 cursor-pointer hover:scale-[1.02]">
@@ -221,14 +221,14 @@ const Index = () => {
                       </Card>
                     )}
                   </div>
-                </div>
+                </ScrollArea>
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1 flex flex-col h-full">
-              <div className="h-full overflow-y-auto pr-2">
-                <div className="space-y-6">
+            {/* Sidebar with visible scrollbar */}
+            <div className="lg:col-span-1 flex flex-col h-full min-h-0">
+              <ScrollArea className="h-full">
+                <div className="space-y-6 pr-4">
                   <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-xl text-slate-800">Categorie</CardTitle>
@@ -276,7 +276,7 @@ const Index = () => {
                     </CardContent>
                   </Card>
                 </div>
-              </div>
+              </ScrollArea>
             </div>
           </div>
         </div>
