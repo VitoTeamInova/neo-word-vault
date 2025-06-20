@@ -26,7 +26,7 @@ const PrologoMaxTortora = () => {
               <img 
                 src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
                 alt="Carlo D'Alatri Logo" 
-                className="w-16 h-16 rounded-lg shadow-lg"
+                className="w-26 h-26 rounded-lg shadow-lg"
               />
             </div>
             <CardTitle className="text-4xl font-bold mb-2">
