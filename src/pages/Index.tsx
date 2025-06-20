@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Search, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
 import AddNeologismForm from "@/components/AddNeologismForm";
 import NeologismCard from "@/components/NeologismCard";
 import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms";
@@ -87,6 +87,23 @@ const Index = () => {
                 <p className="text-slate-600 text-lg">
                   Una collezione di parole per descrivere l'indescrivibile
                 </p>
+                {/* Navigation Links */}
+                <nav className="mt-4">
+                  <div className="flex gap-6">
+                    <Link 
+                      to="/prologo-max-tortora" 
+                      className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                    >
+                      Prologo - Max Tortora
+                    </Link>
+                    <Link 
+                      to="/tuttologo-lillo" 
+                      className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                    >
+                      Tuttologo - Lillo
+                    </Link>
+                  </div>
+                </nav>
               </div>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
