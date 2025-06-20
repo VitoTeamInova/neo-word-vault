@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,7 +72,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
+    <div className="h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Fixed Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 flex-shrink-0">
         <div className="container mx-auto px-4 py-6">
@@ -146,11 +145,11 @@ const Index = () => {
       </div>
 
       {/* Scrollable Main Content Area */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 min-h-0">
         <div className="container mx-auto px-4 py-8 h-full">
           <div className="grid lg:grid-cols-3 gap-8 h-full">
             {/* Scrollable Neologisms List */}
-            <div className="lg:col-span-2 flex flex-col h-full">
+            <div className="lg:col-span-2 flex flex-col h-full min-h-0">
               {/* Search and Filter */}
               <div className="mb-6 flex-shrink-0">
                 <h2 className="text-2xl font-bold text-slate-800 mb-4">Esplora i Neologismi</h2>
@@ -181,7 +180,7 @@ const Index = () => {
               </div>
 
               {/* Scrollable Neologisms */}
-              <div className="flex-1 overflow-hidden">
+              <div className="flex-1 min-h-0">
                 <ScrollArea className="h-full">
                   <div className="space-y-4 pr-4">
                     {filteredNeologisms.map((neologism) => (
@@ -226,7 +225,7 @@ const Index = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1 flex flex-col h-full overflow-hidden">
+            <div className="lg:col-span-1 flex flex-col h-full min-h-0">
               <ScrollArea className="h-full">
                 <div className="space-y-6 pr-4">
                   <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
