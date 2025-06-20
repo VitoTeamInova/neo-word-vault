@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -80,30 +81,38 @@ const Index = () => {
         <div className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
-                  Neologismi di Carlo D'Alatri
-                </h1>
-                <p className="text-slate-600 text-lg">
-                  Una collezione di parole per descrivere l'indescrivibile
-                </p>
-                {/* Navigation Links */}
-                <nav className="mt-4">
-                  <div className="flex gap-6">
-                    <Link 
-                      to="/prologo-max-tortora" 
-                      className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
-                    >
-                      Prologo - Max Tortora
-                    </Link>
-                    <Link 
-                      to="/tuttologo-lillo" 
-                      className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
-                    >
-                      Tuttologo - Lillo
-                    </Link>
-                  </div>
-                </nav>
+              <div className="flex items-center gap-4">
+                {/* Logo */}
+                <img 
+                  src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
+                  alt="Carlo D'Alatri Logo" 
+                  className="w-16 h-16 rounded-lg shadow-lg"
+                />
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
+                    Neologismi di Carlo D'Alatri
+                  </h1>
+                  <p className="text-slate-600 text-lg">
+                    Una collezione di parole per descrivere l'indescrivibile
+                  </p>
+                  {/* Navigation Links */}
+                  <nav className="mt-4">
+                    <div className="flex gap-6">
+                      <Link 
+                        to="/prologo-max-tortora" 
+                        className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                      >
+                        Prologo - Max Tortora
+                      </Link>
+                      <Link 
+                        to="/tuttologo-lillo" 
+                        className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                      >
+                        Tuttologo - Lillo
+                      </Link>
+                    </div>
+                  </nav>
+                </div>
               </div>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>

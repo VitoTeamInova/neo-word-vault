@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -34,14 +33,6 @@ const TuttologoLillo = () => {
               Tuttologo
             </CardTitle>
             <p className="text-xl opacity-90">Lillo</p>
-            {/* Logo in top right corner */}
-            <div className="absolute top-4 right-4">
-              <img 
-                src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
-                alt="Carlo D'Alatri Logo" 
-                className="w-16 h-16 rounded-lg shadow-lg"
-              />
-            </div>
           </CardHeader>
           <CardContent className="p-8">
             <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
