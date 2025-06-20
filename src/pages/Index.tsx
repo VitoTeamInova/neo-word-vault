@@ -9,89 +9,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Search, Plus } from "lucide-react";
 import AddNeologismForm from "@/components/AddNeologismForm";
 import NeologismCard from "@/components/NeologismCard";
-
-const sampleNeologisms = [
-  {
-    id: 1,
-    name: "♦ BOFFOLOTTO",
-    categoria: "teatrini quotidiani",
-    definizione: "regalare un oggetto ricevuto in regalo spacciandolo per nuovo. Ce lo avevamo donato a Natale, ma non lo abbiamo mai utilizzato. La casa, già gonfia di cose inservibili, con i suoi pochi spazi residui ne farebbe volentieri a meno. Finisce così solo per dare fastidio, accantonato nel limbo delle inutilerie, insieme a bollitori dell'acqua, spremiagrumi, e porta -incensi, fino a quell'inaspettato giorno che il destino lo promuove a nuova gloria. Spolverato e messo a nuovo, incar tocciato nella nuova disonesta confezione, la meno sospetta possibile, con tanto di fiocchetto, è ora pronto per esser rifilato. come una falsa banconota, al festeggiato di turno. Fare un boffolotto vuol dire liberare spazio nella propria casa, risparmiare tempo e soldi, in nome dell'eco-sostenibilità, del riciclo e di un po' di sana taccagneria.",
-    status: "Ready"
-  },
-  {
-    id: 2,
-    name: "♦ BUBUFÙ",
-    categoria: "teatrini quotidiani",
-    definizione: "aspettare ad aprire la porta di casa perché si è sentito aprire quella del dirimpettaio. 28 Il pianerottolo è il teatro più piccolo del mondo e gli attori non hanno sempre voglia di recitare. Capita che dai casalinghi camerini privati, retro - porte, corridoi e occhiolini spia, proprio nel momento di uscire, con la mano sulla maniglia, ci arrivi - rimbombante di echi condominiali - il suono inconfondibile della porta che sta aprendo il nostro dirimpettaio. Che la giornata che ci aspetta sia una commedia più o meno sgradevole da interpretare va bene, ma questo prologo inutile si può rimandare e aspet tare che il vicino abbia compiuto tutti i riti dell'uscitore, fin quando sbattimenti, calpestii e porte di ascensori lascino spazio al silenzio completo. Solo allora si può finalmente uscire in pace, senza incontrare il nostro pur amato (si spera) vicino d irimpettaio: abbiamo eseguito il bubufù, che può anche essere reciproco, a doppia mandata, in perfetta sincronia di tempi e sentimenti, o addirittura a catena, a seconda di quante porte ci sono nel pianerottolo. Anche gli altri del resto hanno diritto a non volerci incontrare.",
-    status: "Ready"
-  },
-  {
-    id: 3,
-    name: "♦ BUBUSSO",
-    categoria: "antropologia del malessere",
-    definizione: "spiacevole sensazione a forma di uovo nero che cammina nello stomaco, provocata dalla totale mancanza di voglia di fare una cosa. C'è da fare una telefonata difficile, che sarebbe meglio cavarsi un dente, ma potrebbe essere una 29 ringhiera da verniciare o un cambio di stagione degli armadi, che ci coglie all'improvviso. Le cause del bubusso sono infinite, onnipresenti, l'inevitabilità è la loro caratteristica che ne disegna la perfidia e ne amplifica la portanza. Il bubusso uno dei più temibili nemici della nostra anima - sa gonfiarsi e crescere soprattutto quando rimandiamo il da farsi, fino a trasformarsi in mostro, ancor più enorme e doloroso dello stesso semplice temuto dovere.",
-    status: "Ready"
-  },
-  {
-    id: 4,
-    name: "♦ BUFACCHIO",
-    categoria: "psicologia degli oggetti",
-    definizione: "oggetto smarrito e lungamente ricercato che riappare soltanto quando se ne ricompra un altro uguale. Gli oggetti sono vendicativi per natura e fanno esercizio, specialmente contro la razza umana della più spietata crudeltà. Consapevoli dell'abilità che hanno nello scomparire e riapparire quando vogliono, torturano con bizzarre marachelle e diabolici giochi di prestigio. Il bufacchio sa di essere importante, si mimetizza in casa per un certo periodo, provocando con la sua sparizione disagi e tribolazioni tali da costringere a comprare un altro gemello che lo possa sostituire. A questo punto il bufacchio gonfia il suo orgoglio e monta la sua ira, ingelosito tra l'altro dal nuovo 30 rivale appena arrivato, specialmente se di migliore qualità o di più recente costruzione. Detesta infatti sentirsi obsoleto e spesso sa vendicarsi in modo ancor più crudele e imprevedibile. Nel migliore dei casi riappare improvvisamente, raggiungendo con un orgasmo quantistico il suo vero scopo: infastidire e far spendere soldi inutilmente.",
-    status: "Ready"
-  },
-  {
-    id: 5,
-    name: "♦ CARABOTTO",
-    categoria: "teatrini quotidiani",
-    definizione: "tosse simulata per mimetizzare rumori indiscreti. Con il vecchio trucco del carabotto l'uomo protegge e custodisce quel piccolo segreto legato alle melodie dell'intestino che solitamente non possono essere eseguite pubblicamente. Non potendo spengere questo impeto creativo, inventa un playback, un doppiaggio cinematografico e sincronizza con il colpo di tosse ad alto volume il si bemolle che viene dal basso. C'è uno strano scarico di responsabilità dall'impianto digerente a quello respiratorio, come se quest'ultimo avesse me no dignità da difendere da poter essere tranquillamente calunniato. La pratica del carabotto consegue sempre i risultati prefissati, ma va usata con cautela e non è comunque consigliabile in ambienti piccoli e chiusi, dove le onde sonore non sono gli unici fenomeni a propagarsi.",
-    status: "Ready"
-  },
-  {
-    id: 6,
-    name: "♦ CASCOPETROBE",
-    categoria: "creature rarissime",
-    definizione: "casellante autostradale che ha voglia di chiacchierare. 34",
-    status: "Ready"
-  },
-  {
-    id: 7,
-    name: "♦ CASTROFENIA",
-    categoria: "antropologia del malessere",
-    definizione: "acuta noia da messa domenicale. Siamo a messa, per accompagnare qualcuno, per abitudine o per tradizione, siamo in prima fila, genuflessi, fervidi fedeli inzuppati di speranza, siamo vecchi, bambini, neonati innocenti, pregatori per hobby (della domenica) o magari veri e sinceri credenti, ricchi di pro fonda spiritualità. C'è posto per tutti a messa e le braccia aperte di Santa Romana Chiesa avvolgono anche chi non crede o crede pochissimo. Il problema è scappare. La castrofenia non fa certo distinzioni, parla tutte le lingue, specialmente il latino, e a ttacca nel mentre si cambia, da inginocchiati a in piedi a inginocchiati di nuovo. Un'eco da mal di tomba risuona nei ribattuti delle voci sacerdotali dalle pronunce afro -ispano- filippine così sgradevolmente ignote da favorire i miraggi e i piani di evasione dei prigionieri in sala. Le chitarre dei ragazzi della parrocchia sciagattano le corde, si cantano - si fa per dire - le solite immagini zeppe di agnelli, sorgenti e mense del signore. I cori, informi, senza pietà si abbattono mai intonati, penetrando o recchie e mura create dai nuovi architetti moderni apposta per favorire la depressione, come non bastassero già i cuori sbudellati e perforati da frecce, le teste mozzate, 35 gli occhi dei poveri santi cavati e serviti come ostriche. Per quieto vivere si segu e il testo rispondendo tutti insieme, ovviamente fuori tempo. Qualcuno si scambia il segno di pace, tanto per non tirare fuori la pistola. Passano speranzosi i questuanti in cerca di soldi per gli orfanelli e gli habitué dell'ostia, con il numeretto in man o, stanno già in fila per la comunione aspettando che il prete finisca di lucidare meticolosamente l'ultimo pezzo di calice, bere vino, rilucidare e ribere vino. Così tra il puzzo di cera e la fame di mezzogiorno scorrono lentissime le lancette dell'orologio anch'esso azzoppato dalla castrofenia. Qualche gruppetto di sovversivi (vedi pestilofrobi) affetti da attacchi acuti di sofferenza ha coraggiosamente tolto il disturbo e segue da fuori la porta d'entrata il susseguirsi delle parabole, ma da lì a fumarsi una sigaretta e parlare del derby il passo è breve: hanno comunque salvato faccia e coscienza perché non sono fuggiti al bar, da uomini di buona volontà sono rimasti tra il dentro e il fuori, legati da un filo immaginario all'altare e potranno dire a gran voce che erano lì, anche quella domenica.",
-    status: "Ready"
-  },
-  {
-    id: 8,
-    name: "♦ CATACRIMITOMORFISMO",
-    categoria: "frustrazioni digitali",
-    definizione: "frequente difficoltà a distinguere lo zero dalla lettera 'O' quando si digita una password. 36",
-    status: "Ready"
-  },
-  {
-    id: 9,
-    name: "♦ CATARACCHIA",
-    categoria: "neo-oggettistica",
-    definizione: "parte incrostata e bruciacchiata delle patate al forno.",
-    status: "Ready"
-  },
-  {
-    id: 10,
-    name: "♦ CATENA DI SAN LUIGI",
-    categoria: "sorprendenti normalità",
-    definizione: "catena sequenziale di azionamenti dello schizzo del tergicristallo. Tipico delle code cittadine o autostradali, più o meno lente: il sole è un po' basso e infastidisce la guida mettendo in evidenza un vetro sporco e impolverato. Niente di più giusto che azionare l'acqua dei tergicristalli per fare pulizia e vederci chiaro, ma complice un po' di vento, il getto vaporizzato finisce per inzuppare il vetro della macchina appena lavata con i vetri pulitissimi che sta immediatamente dietro, la quale trovandosi ora col vetro nuovamente sporco aziona l'acqua dei tergicristalli, che finisce per sporcare l'altra macchina che sta a ncora dietro. La catena di San Luigi è un fenomeno che può coprire distanze inimmaginabili in una processione infinita di inzuppamenti. 37",
-    status: "Ready"
-  },
-  {
-    id: 11,
-    name: "♦ CEFORO DA CONTRATTEMPO",
-    categoria: "sorprendenti normalità",
-    definizione: "percezione di positività in una circostanza spiacevole. Quando una negatività si abbatte sui nostri percorsi quotidiani, quando sfuggono, slittano o si frantumano appuntamenti con la vita, spariscono oggetti, persone, speranze, piccole e grandi certezze, dal dolore che arriva - se lo sappiamo guardare bene - filtra sempre un raggio di luce, un'apertura ad uno spazio inaspettato. È il nuovo capitale di energia che il destino ci regala. Sbagliare strada, perdersi, significa toccare nuove possibilità: lo capiamo sempre troppo tardi, ma è sempre co sì, basta aspettare. Da un telefonino smarrito si accende la fantasia che fa pregustare l'acquisto dell'ultimo modello, e con un po' più di saggezza possiamo godere dell'oasi di silenzio e di pace che solo disconnessi si può trovare. Autobus che non passan o, rapporti sentimentali che si chiudono, stop obbligati, lavori o persone perduti, sono finestre: basta aprirle per assaporare il gusto inaspettato del ceforo da contrattempo.",
-    status: "Ready"
-  }
-];
+import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms";
 
 const Index = () => {
-  const [neologisms, setNeologisms] = useState(sampleNeologisms);
+  const [neologisms, setNeologisms] = useState(importedNeologisms);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -99,7 +20,7 @@ const Index = () => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   // Get unique categories
-  const categories = Array.from(new Set(neologisms.map(n => n.categoria))).sort();
+  const categories = getCategories();
 
   // Get random neologism for initial featured display
   const randomNeologism = useMemo(() => {
@@ -123,7 +44,7 @@ const Index = () => {
   const handleAddNeologism = (newNeologism: any) => {
     const neologismWithId = {
       ...newNeologism,
-      id: Date.now(),
+      id: Math.max(...neologisms.map(n => n.id)) + 1,
       status: "Draft"
     };
     setNeologisms([...neologisms, neologismWithId]);
