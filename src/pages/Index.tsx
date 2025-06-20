@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -94,15 +95,20 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [featuredNeologism, setFeaturedNeologism] = useState(null);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   // Get unique categories
   const categories = Array.from(new Set(neologisms.map(n => n.categoria))).sort();
 
-  // Get random neologism for featured display
+  // Get random neologism for initial featured display
   const randomNeologism = useMemo(() => {
     const readyNeologisms = neologisms.filter(n => n.status === "Ready");
     return readyNeologisms[Math.floor(Math.random() * readyNeologisms.length)];
   }, [neologisms]);
+
+  // Use featured neologism if selected, otherwise show random
+  const displayedNeologism = featuredNeologism || randomNeologism;
 
   // Filter neologisms based on search and category
   const filteredNeologisms = useMemo(() => {
@@ -122,6 +128,22 @@ const Index = () => {
     };
     setNeologisms([...neologisms, neologismWithId]);
     setIsDialogOpen(false);
+  };
+
+  const handleNeologismClick = (neologism: any) => {
+    setFeaturedNeologism(neologism);
+    setIsDescriptionExpanded(false);
+  };
+
+  const toggleDescription = () => {
+    setIsDescriptionExpanded(!isDescriptionExpanded);
+  };
+
+  const getTruncatedDescription = (description: string) => {
+    if (isDescriptionExpanded || description.length <= 150) {
+      return description;
+    }
+    return description.substring(0, 150) + "...";
   };
 
   return (
@@ -169,21 +191,29 @@ const Index = () => {
           {/* Featured Neologism */}
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-slate-800 mb-6">Neologismo in Evidenza</h2>
-            {randomNeologism && (
+            {displayedNeologism && (
               <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-xl border-0">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-3xl font-bold mb-2">
-                      {randomNeologism.name}
+                      {displayedNeologism.name}
                     </CardTitle>
                     <Badge variant="secondary" className="bg-white/20 text-white">
-                      {randomNeologism.categoria}
+                      {displayedNeologism.categoria}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg leading-relaxed opacity-95">
-                    {randomNeologism.definizione}
+                  <p 
+                    className="text-lg leading-relaxed opacity-95 cursor-pointer hover:opacity-100 transition-opacity"
+                    onClick={toggleDescription}
+                  >
+                    {getTruncatedDescription(displayedNeologism.definizione)}
+                    {displayedNeologism.definizione.length > 150 && (
+                      <span className="block mt-2 text-sm opacity-75 hover:opacity-100">
+                        {isDescriptionExpanded ? "Clicca per nascondere" : "Clicca per leggere tutto"}
+                      </span>
+                    )}
                   </p>
                 </CardContent>
               </Card>
@@ -221,7 +251,9 @@ const Index = () => {
             {/* Neologisms List */}
             <div className="space-y-4">
               {filteredNeologisms.map((neologism) => (
-                <NeologismCard key={neologism.id} neologism={neologism} />
+                <div key={neologism.id} onClick={() => handleNeologismClick(neologism)}>
+                  <NeologismCard neologism={neologism} />
+                </div>
               ))}
               {filteredNeologisms.length === 0 && (
                 <Card className="p-8 text-center">

@@ -30,7 +30,7 @@ const NeologismCard: React.FC<NeologismCardProps> = ({ neologism }) => {
   };
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300">
+    <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300 cursor-pointer hover:scale-[1.02]">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start gap-4">
           <CardTitle className="text-xl font-bold text-slate-800 leading-tight">
@@ -52,6 +52,9 @@ const NeologismCard: React.FC<NeologismCardProps> = ({ neologism }) => {
             ? `${neologism.definizione.substring(0, 300)}...` 
             : neologism.definizione
           }
+        </p>
+        <p className="text-sm text-indigo-600 mt-2 opacity-70">
+          Clicca per visualizzare in evidenza
         </p>
       </CardContent>
     </Card>
