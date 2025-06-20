@@ -58,7 +58,7 @@ const rawNeologismsData = [
   {
     "name": "♦ CATACRIMITOMORFISMO",
     "categoria": "frustrazioni digitali.",
-    "definizione": "frequente difficoltà a distinguere lo zero dalla lettera "O" quando si digita una password. 36"
+    "definizione": "frequente difficoltà a distinguere lo zero dalla lettera O quando si digita una password. 36"
   },
   {
     "name": "♦ CATARACCHIA",
@@ -103,12 +103,12 @@ const rawNeologismsData = [
   {
     "name": "♦ DEJASÙ",
     "categoria": "sorprendenti normalità.",
-    "definizione": "esatto contrario del déjà -vu, consiste nel vivere un'esperienza nuova avendo la sensazione di non averla mai vissuta. Durante un'esperienza nuova, di qualsiasi tipo, può insorgere il dejasù; potremo trovarci in un luogo per la prima volta e avere improvvisamente la nitida consapevole sensazione di non esserci mai stati, può succedere conoscendo una persona o leggendo un libro, questo libro in particolare, e in questo preciso istante: è un po' come vivere il nuovo con occhi nuovi. Esclamazione tipica del dejasù è: "Ho la netta sensazione di non essere mai stato in questo posto"."
+    "definizione": "esatto contrario del déjà -vu, consiste nel vivere un'esperienza nuova avendo la sensazione di non averla mai vissuta. Durante un'esperienza nuova, di qualsiasi tipo, può insorgere il dejasù; potremo trovarci in un luogo per la prima volta e avere improvvisamente la nitida consapevole sensazione di non esserci mai stati, può succedere conoscendo una persona o leggendo un libro, questo libro in particolare, e in questo preciso istante: è un po' come vivere il nuovo con occhi nuovi. Esclamazione tipica del dejasù è: Ho la netta sensazione di non essere mai stato in questo posto."
   },
   {
     "name": "♦ DIMINUNGRANDITIVO",
     "categoria": "grammatica italiana.",
-    "definizione": "aggettivo ridimensionante. Può succedere di accorgersi di aver esagerato in un complimento e volerlo quindi alleggerire, senza però farne a meno. Con un piccolo tocco al ribasso, possiamo usare il diminungranditivo, sostituendo ad esempio l'aggettivo "bellissimo" con "bellissimino", "magnifico" con "magnifichello", "grandiosa" con "grandiosetta". 44"
+    "definizione": "aggettivo ridimensionante. Può succedere di accorgersi di aver esagerato in un complimento e volerlo quindi alleggerire, senza però farne a meno. Con un piccolo tocco al ribasso, possiamo usare il diminungranditivo, sostituendo ad esempio l'aggettivo bellissimo con bellissimino, magnifico con magnifichello, grandiosa con grandiosetta. 44"
   },
   {
     "name": "♦ DONDOGILIO",
@@ -148,7 +148,7 @@ const rawNeologismsData = [
   {
     "name": "♦ FALSELLA",
     "categoria": "teatrini quotidiani.",
-    "definizione": "finta esclamazione di sorpresa collettiva quando giunge la notizia che un commensale ha già pagato il conto per tutti al ristorante. Il caffè e l'amaro lo hanno preso tutti, le chiacchiere sono finite, sarebbe il momento di chiedere il conto al cameriere, ma uno del gruppo - il più simpatico il p iù generoso o il più qualcos'altro - si alza dalla sedia e con eleganza si dilegua silenzioso verso un punto non ben identificato del ristorante. Sparisce solo per pochi minuti. Tutti hanno capito che è questa la mossa del pagatore, anzi tutti lo speravano , se ne era addirittura vociferato. Il momento, dunque, è delicato e cala un silenzio nel gruppo utile a raccogliere le energie che la recita richiede. Quando il buonuomo ritorna con lo stesso elegante passo con il quale se ne era andato, il Giuda di turno scaglia la prima freccia esclamando: "Allora ragazzi chiediamo il conto!". La banda di complici annuisce, qualcuno sventola un portafoglio che sa di non dover aprire, qualcuno finge di cercare un cameriere (la creatività non manca mai in questi casi) ma è il nostro eroe che chiude la questione con voce rassicurante: "Già fatto… è tutto a posto, ci ho pensato io!". Eccolo allora che si leva il coro - minestrone della finzione di massa, un cocktail di 54 "Non dovevi…" e versacci inebriati di stupore, frasi inutil i di gratitudine, disapprovazioni, mugolii e genuflessioni, tutto rigorosamente finto, tutto sintetizzato in una sola parola: la falsella."
+    "definizione": "finta esclamazione di sorpresa collettiva quando giunge la notizia che un commensale ha già pagato il conto per tutti al ristorante. Il caffè e l'amaro lo hanno preso tutti, le chiacchiere sono finite, sarebbe il momento di chiedere il conto al cameriere, ma uno del gruppo - il più simpatico il p iù generoso o il più qualcos'altro - si alza dalla sedia e con eleganza si dilegua silenzioso verso un punto non ben identificato del ristorante. Sparisce solo per pochi minuti. Tutti hanno capito che è questa la mossa del pagatore, anzi tutti lo speravano , se ne era addirittura vociferato. Il momento, dunque, è delicato e cala un silenzio nel gruppo utile a raccogliere le energie che la recita richiede. Quando il buonuomo ritorna con lo stesso elegante passo con il quale se ne era andato, il Giuda di turno scaglia la prima freccia esclamando: Allora ragazzi chiediamo il conto!. La banda di complici annuisce, qualcuno sventola un portafoglio che sa di non dover aprire, qualcuno finge di cercare un cameriere (la creatività non manca mai in questi casi) ma è il nostro eroe che chiude la questione con voce rassicurante: Già fatto… è tutto a posto, ci ho pensato io!. Eccolo allora che si leva il coro - minestrone della finzione di massa, un cocktail di 54 Non dovevi… e versacci inebriati di stupore, frasi inutili di gratitudine, disapprovazioni, mugolii e genuflessioni, tutto rigorosamente finto, tutto sintetizzato in una sola parola: la falsella."
   },
   {
     "name": "♦ FANFASSA",
@@ -198,7 +198,7 @@ const rawNeologismsData = [
   {
     "name": "♦ GIROCOZZO",
     "categoria": "creature rarissime.",
-    "definizione": "persona che ha fatto 123 volte il giro del mondo. Non abbiamo informazioni precise relative al girocozzo. Non esistono riscontri o testimonianze, ma di certo non possiamo escludere la possibilità che un essere umano abbia compiuto per 123 volte il giro del mondo: non è impossibile farlo. E così, come l'ipotesi mai provata che esistano civiltà intelligenti al di fuori del sistema solare ci ha portato a coniare il termine di uso comunissimo "extraterrestri", è ancor più logico poter identificare con un nome preciso q uesto tipo di viaggiatore ipotetico."
+    "definizione": "persona che ha fatto 123 volte il giro del mondo. Non abbiamo informazioni precise relative al girocozzo. Non esistono riscontri o testimonianze, ma di certo non possiamo escludere la possibilità che un essere umano abbia compiuto per 123 volte il giro del mondo: non è impossibile farlo. E così, come l'ipotesi mai provata che esistano civiltà intelligenti al di fuori del sistema solare ci ha portato a coniare il termine di uso comunissimo extraterrestri, è ancor più logico poter identificare con un nome preciso q uesto tipo di viaggiatore ipotetico."
   },
   {
     "name": "♦ GOBBASSA",
@@ -278,7 +278,7 @@ const rawNeologismsData = [
   {
     "name": "♦ LAMPO BROCHIODOCARDO",
     "categoria": "antropologia del malessere",
-    "definizione": "colpo fulminante di consapevolezza che trafigge dolorosamente chi di sua spontanea volontà intraprende un lunghissimo e noioso lavoro. Perché mai, invece di onorare e godersi il sole di una splendida giornata di maggio, dovremo fare il cambio di stagione dei vestiti? Perché mai i tre giorni di ferie ben edetti dovrebbero essere destinati a nefasti progetti come verniciare la ringhiera del balcone, mettere in ordine le ricevute del condominio o rassettare la cantina? La mente umana non sopporta troppa felicità. Libertà e benessere abbondanti inducono spess o ad elaborare i pensieri e le intenzioni più devastanti. C'è un momento però, un secondo, un attimo improvviso, non appena abbiamo svuotato tutti i cassetti, accatastati i libri sul letto, messo casa a soqquadro, quando i ragni ci stanno per assalire e il polverone si addensa che eccola: una luce di coscienza illumina - anche se ormai troppo tardi - la nostra mente annebbiata. Completamente sotto shock, vediamo allora la cruda realtà: una rapida carrellata sulla catastrofe. E da soli e disperati ci chiediamo: "Chi me l'ha fatto fare? In quale incubo mai mi sono cacciato?". È il lampo brochidocardo, un flash di buon senso che scatta troppo tardi. 82"
+    "definizione": "colpo fulminante di consapevolezza che trafigge dolorosamente chi di sua spontanea volontà intraprende un lunghissimo e noioso lavoro. Perché mai, invece di onorare e godersi il sole di una splendida giornata di maggio, dovremo fare il cambio di stagione dei vestiti? Perché mai i tre giorni di ferie ben edetti dovrebbero essere destinati a nefasti progetti come verniciare la ringhiera del balcone, mettere in ordine le ricevute del condominio o rassettare la cantina? La mente umana non sopporta troppa felicità. Libertà e benessere abbondanti inducono spess o ad elaborare i pensieri e le intenzioni più devastanti. C'è un momento però, un secondo, un attimo improvviso, non appena abbiamo svuotato tutti i cassetti, accatastati i libri sul letto, messo casa a soqquadro, quando i ragni ci stanno per assalire e il polverone si addensa che eccola: una luce di coscienza illumina - anche se ormai troppo tardi - la nostra mente annebbiata. Completamente sotto shock, vediamo allora la cruda realtà: una rapida carrellata sulla catastrofe. E da soli e disperati ci chiediamo: Chi me l'ha fatto fare? In quale incubo mai mi sono cacciato?. È il lampo brochidocardo, un flash di buon senso che scatta troppo tardi. 82"
   },
   {
     "name": "♦ LASCIONE",
@@ -303,7 +303,7 @@ const rawNeologismsData = [
   {
     "name": "♦ MANGIUCHISMO",
     "categoria": "psicologia degli oggetti.",
-    "definizione": "innata propensione al nomadismo del telecomando TV. "È più facile che un cammello passi per la cruna di un ago", che il telecomando si trovi dove lo abbiamo lasciato. La possibilità remota di trovare rapidamente un telecomando TV è il sogno comune di milioni di esseri umani che, una volta atterrati sul divano, annaspano, palpano, tastan o ovunque con pochissime possibilità di su ccesso. Ma il fenomeno del mangiuchismo non è imputabile al carattere disordinato e sbadato degli uomini. È inutile e dannoso cadere in diatribe casalinghe e accuse reciproche, perché il telecomando è un oggetto dal carattere nomade e, se ne apprezziamo l'utilità, dobbiamo anche rispettare il suo carattere."
+    "definizione": "innata propensione al nomadismo del telecomando TV. È più facile che un cammello passi per la cruna di un ago, che il telecomando si trovi dove lo abbiamo lasciato. La possibilità remota di trovare rapidamente un telecomando TV è il sogno comune di milioni di esseri umani che, una volta atterrati sul divano, annaspano, palpano, tastan o ovunque con pochissime possibilità di su ccesso. Ma il fenomeno del mangiuchismo non è imputabile al carattere disordinato e sbadato degli uomini. È inutile e dannoso cadere in diatribe casalinghe e accuse reciproche, perché il telecomando è un oggetto dal carattere nomade e, se ne apprezziamo l'utilità, dobbiamo anche rispettare il suo carattere."
   },
   {
     "name": "♦ MESTAZZONA",
@@ -343,7 +343,7 @@ const rawNeologismsData = [
   {
     "name": "♦ NIBICONDIA",
     "categoria": "sorprendenti normalità.",
-    "definizione": "tipica espressione di felicità raggiante di individuo che esce dal centro commerciale con un gigantesco scatolone, fiero del suo televisore da 100" appena acquistato."
+    "definizione": "tipica espressione di felicità raggiante di individuo che esce dal centro commerciale con un gigantesco scatolone, fiero del suo televisore da 100 pollici appena acquistato."
   },
   {
     "name": "♦ NICCHIOLICCHIO",
@@ -373,7 +373,7 @@ const rawNeologismsData = [
   {
     "name": "♦ OLIVISSA",
     "categoria": "teatrini quotidiani.",
-    "definizione": "l'ultima oliva che nessuno prende per educazione. Come una zitella solitaria l'ultima oliva, o meglio l'olivissa, resta in tavola lucida e intatta. Sembra quasi soffrire di solitudine, fa gola, ma nessuno la tocca, nessuno si prende la responsabilità di lasciare quel piattino vuoto, come a far capire: "Sono io il maiale!". Si studiano le mo sse dell'altro, cercando di individuare chi farà il grande passo, ma l'educazione, o chi per lei, hanno represso e intimorito tutti. L'olivissa continuerà ad esistere soltanto nei sogni mai realizzati e nelle occasioni perdute di questa cena, probabilmente un po' noiosa."
+    "definizione": "l'ultima oliva che nessuno prende per educazione. Come una zitella solitaria l'ultima oliva, o meglio l'olivissa, resta in tavola lucida e intatta. Sembra quasi soffrire di solitudine, fa gola, ma nessuno la tocca, nessuno si prende la responsabilità di lasciare quel piattino vuoto, come a far capire: Sono io il maiale!. Si studiano le mo sse dell'altro, cercando di individuare chi farà il grande passo, ma l'educazione, o chi per lei, hanno represso e intimorito tutti. L'olivissa continuerà ad esistere soltanto nei sogni mai realizzati e nelle occasioni perdute di questa cena, probabilmente un po' noiosa."
   },
   {
     "name": "♦ ONOSTOLFO",
@@ -418,7 +418,7 @@ const rawNeologismsData = [
   {
     "name": "♦ PROTOMOSCARZOFONE",
     "categoria": "creature rarissime.",
-    "definizione": "individuo che legge contratti e licenze delle applicazioni prima di dare "Ok" per installarle."
+    "definizione": "individuo che legge contratti e licenze delle applicazioni prima di dare Ok per installarle."
   },
   {
     "name": "♦ QUISQUIRAGLIO",
@@ -448,7 +448,7 @@ const rawNeologismsData = [
   {
     "name": "♦ RIBBECCONE",
     "categoria": "antropologia del malessere.",
-    "definizione": "non sapere mai dove va la lettera "h" nelle parole inglesi. 117 John o Jhon? Christian o Crhistian? Non lo sappiamo mai. Quando ci sono questi dubbi siamo preda del ribbeccone, uno dei piccoli insidiosi fastidi della lingua inglese."
+    "definizione": "non sapere mai dove va la lettera h nelle parole inglesi. 117 John o Jhon? Christian o Crhistian? Non lo sappiamo mai. Quando ci sono questi dubbi siamo preda del ribbeccone, uno dei piccoli insidiosi fastidi della lingua inglese."
   },
   {
     "name": "♦ RICACCHIO",
@@ -488,12 +488,12 @@ const rawNeologismsData = [
   {
     "name": "♦ SCATARAFFA",
     "categoria": "sorprendenti normalità.",
-    "definizione": "gioia percepita dal fallimento di un progetto sviluppato con persone che non hanno dato ascolto al nostro parere. Perdersi nel percorso del viaggio con persone che si ostinano a seguire la rotta sbagliata nonostante i nostri avvertimenti può lasciare un retrogusto piacevole, profumato di orgoglio e disappunto. Ci sentiamo, alla luce dell'errore conclamato, autorizzati ad alzare la voce e abbaiare il classico: "Ve l'avevo detto!", con tanto di risatina sarcastica e inutile godimento, essendo tutti dentro la stessa barca. Una scataraffa in fase acuta può solleticare persino l'irrazionale voglia di remare segretamente in senso contrario e favorire così il destino comune al disastro incombente: Lo scataraffatore non si dichiara tale, rimane diabolicamente zitto nell'anonimato del suo ruolo, godendosi il suo orgasmo nel più completo silenzio."
+    "definizione": "gioia percepita dal fallimento di un progetto sviluppato con persone che non hanno dato ascolto al nostro parere. Perdersi nel percorso del viaggio con persone che si ostinano a seguire la rotta sbagliata nonostante i nostri avvertimenti può lasciare un retrogusto piacevole, profumato di orgoglio e disappunto. Ci sentiamo, alla luce dell'errore conclamato, autorizzati ad alzare la voce e abbaiare il classico: Ve l'avevo detto!, con tanto di risatina sarcastica e inutile godimento, essendo tutti dentro la stessa barca. Una scataraffa in fase acuta può solleticare persino l'irrazionale voglia di remare segretamente in senso contrario e favorire così il destino comune al disastro incombente: Lo scataraffatore non si dichiara tale, rimane diabolicamente zitto nell'anonimato del suo ruolo, godendosi il suo orgasmo nel più completo silenzio."
   },
   {
     "name": "♦ SCHICCHIO FOCOSO",
     "categoria": "teatrini quotidiani.",
-    "definizione": "fastidio avvertito sulle mani che applaudono per molto tempo. È finita! I bis possibili sono stati consumati, goduti, osannati. Gli attori esausti, i musici, i ballerini, in bilico tra la voglia di tornare a casa e 124 quella di continuare a stare immersi in questa doccia calda di applausi che il pubblico in piedi continua a scrosciare e non accenna a smettere. Anche sipario e siparista sono stanchi di aprire e chiudere, intrappolati in questo loop di "Bubu… settete!" per adulti. In sala non ci sono distinzioni tra chi ha gradito lo spettacolo e chi è rimasto indifferente. Qualcuno ha dormito addirittura. Ma questo è il momento della festosa omologazione con tutte queste mani primitive da australopitechi che continuano a sbattere. E solo loro - le mani - non sono d'accordo. Concepite per altre mansioni, indifferenti a quello che sta succedendo, urlano il loro disappunto. Rosse infuocate, stanche di sbattimenti, ci implorano di fermarci: è l'urlo inconfondibile, dolorante dello schicchio focoso."
+    "definizione": "fastidio avvertito sulle mani che applaudono per molto tempo. È finita! I bis possibili sono stati consumati, goduti, osannati. Gli attori esausti, i musici, i ballerini, in bilico tra la voglia di tornare a casa e 124 quella di continuare a stare immersi in questa doccia calda di applausi che il pubblico in piedi continua a scrosciare e non accenna a smettere. Anche sipario e siparista sono stanchi di aprire e chiudere, intrappolati in questo loop di Bubu… settete! per adulti. In sala non ci sono distinzioni tra chi ha gradito lo spettacolo e chi è rimasto indifferente. Qualcuno ha dormito addirittura. Ma questo è il momento della festosa omologazione con tutte queste mani primitive da australopitechi che continuano a sbattere. E solo loro - le mani - non sono d'accordo. Concepite per altre mansioni, indifferenti a quello che sta succedendo, urlano il loro disappunto. Rosse infuocate, stanche di sbattimenti, ci implorano di fermarci: è l'urlo inconfondibile, dolorante dello schicchio focoso."
   },
   {
     "name": "♦ SCHIRFIO",
@@ -503,12 +503,12 @@ const rawNeologismsData = [
   {
     "name": "♦ SCIALOGLIO",
     "categoria": "antropologia del malessere.",
-    "definizione": "calore umano rimasto sulla sedia di una persona che si è appena alzata, percepito da un'altra che prende il suo posto. Il caldo ascende con le sue molecole agitate, emanazioni silenziose di sospette flatulenze. Lo si avverte imprevisto, mentre passa dal culo sconosciuto che lo ha covato e trasmigra nel nostro corpo. Eredità del tizio che si è appena alzato, lo scialoglio si infila al centro dell'anima attraversando tutte le intimità, approfittando di una sedia che gli fa da tramite. "Non è giusto!" viene allora da pensare, ma è troppo tardi: per induzione il trasloco di calore è istantaneo, ci destabilizza p er qualche attimo e poi, accomodanti e rassegnati, accettiamo la ripugnanza in cambio di un posto a sedere. Metropolitane, sale d'aspetto, aeroporti, cinema, ovunque esistano spazi comuni per sedere, lo scialoglio è sempre in agguato, come un parassita riscaldatore che ci umilia nel profondo. 126"
+    "definizione": "calore umano rimasto sulla sedia di una persona che si è appena alzata, percepito da un'altra che prende il suo posto. Il caldo ascende con le sue molecole agitate, emanazioni silenziose di sospette flatulenze. Lo si avverte imprevisto, mentre passa dal culo sconosciuto che lo ha covato e trasmigra nel nostro corpo. Eredità del tizio che si è appena alzato, lo scialoglio si infila al centro dell'anima attraversando tutte le intimità, approfittando di una sedia che gli fa da tramite. Non è giusto! viene allora da pensare, ma è troppo tardi: per induzione il trasloco di calore è istantaneo, ci destabilizza p er qualche attimo e poi, accomodanti e rassegnati, accettiamo la ripugnanza in cambio di un posto a sedere. Metropolitane, sale d'aspetto, aeroporti, cinema, ovunque esistano spazi comuni per sedere, lo scialoglio è sempre in agguato, come un parassita riscaldatore che ci umilia nel profondo. 126"
   },
   {
     "name": "♦ SCIVULENZA",
     "categoria": "frustrazioni digitali.",
-    "definizione": "caos inestricabile e totale nella gestione delle proprie password. 127 Se al momento di fare un login la risposta più frequente che vi viene data è: "Password errata" o "Account errato", siete affetti da scivulenza. Un problema frequentissimo che affligge molte persone, un popolo che non tollera l'informatica: poeti, sognatori e molte donne in stato di esistenza in vita. La scivulenza è uno dei principali responsabili della produzione umana di asmio (vedi definizione)."
+    "definizione": "caos inestricabile e totale nella gestione delle proprie password. 127 Se al momento di fare un login la risposta più frequente che vi viene data è: Password errata o Account errato, siete affetti da scivulenza. Un problema frequentissimo che affligge molte persone, un popolo che non tollera l'informatica: poeti, sognatori e molte donne in stato di esistenza in vita. La scivulenza è uno dei principali responsabili della produzione umana di asmio (vedi definizione)."
   },
   {
     "name": "♦ SCROCCELLO",
@@ -588,7 +588,7 @@ const rawNeologismsData = [
   {
     "name": "♦ SPIRICCIO",
     "categoria": "teatrini quotidiani.",
-    "definizione": "piccola diatriba tra persone che competono per pagare il caffè al bar. Avidi, egoisti, falsi, cinici, perfidi, disonesti nella vita, i gruppi umani al bar sono soliti accendere 135 particolarissime spettacolari competizioni per chi paga il caffè. Sono gli shows danzanti delle generosità ostentate, gare di atletica gesticolazione, dove il pagatore smarca tutti i tentativi di placcaggio, forza le barriere di gomiti e avambracci, arriva per primo alla cassa e paga urlando: "Ho fatto io!!" È questa l'occasione che non poteva lasciarsi scappare: con pochissimi euro può sfoggiare grande generosità e simpatia per tornare subito dopo a sbranarsi con gli tutti altri come al solito."
+    "definizione": "piccola diatriba tra persone che competono per pagare il caffè al bar. Avidi, egoisti, falsi, cinici, perfidi, disonesti nella vita, i gruppi umani al bar sono soliti accendere 135 particolarissime spettacolari competizioni per chi paga il caffè. Sono gli shows danzanti delle generosità ostentate, gare di atletica gesticolazione, dove il pagatore smarca tutti i tentativi di placcaggio, forza le barriere di gomiti e avambracci, arriva per primo alla cassa e paga urlando: Ho fatto io!! È questa l'occasione che non poteva lasciarsi scappare: con pochissimi euro può sfoggiare grande generosità e simpatia per tornare subito dopo a sbranarsi con gli tutti altri come al solito."
   },
   {
     "name": "♦ SPIRINDELLO",
@@ -608,7 +608,7 @@ const rawNeologismsData = [
   {
     "name": "♦ SURZUFUCCHI",
     "categoria": "personologia.",
-    "definizione": "silenziatori di sale cinematografiche. Preferiscono, non si sa perché, esprimersi con il fonema "Scccc" (quello di sci, o scimmia, tanto 137 per intendersi) e lo esibiscono come fosse il loro strumento preferito nel bel mezzo del buio in sala, a proiezione iniziata. Quelli più radicali addirittura lo suonano nel le pubblicità prima del film. Odiano i bisbigli della gente che si sta sistemando in poltrona, dei ritardatari che fanno ri-alzare tutta la fila, degli scartatori di plastiche rumorose, insomma si ritengono i garanti dell'ordine e difendono il silenzio per fetto. Sono certamente nel giusto, hanno tutte le ragioni del mondo. Ma sono antipatici."
+    "definizione": "silenziatori di sale cinematografiche. Preferiscono, non si sa perché, esprimersi con il fonema Scccc (quello di sci, o scimmia, tanto 137 per intendersi) e lo esibiscono come fosse il loro strumento preferito nel bel mezzo del buio in sala, a proiezione iniziata. Quelli più radicali addirittura lo suonano nel le pubblicità prima del film. Odiano i bisbigli della gente che si sta sistemando in poltrona, dei ritardatari che fanno ri-alzare tutta la fila, degli scartatori di plastiche rumorose, insomma si ritengono i garanti dell'ordine e difendono il silenzio per fetto. Sono certamente nel giusto, hanno tutte le ragioni del mondo. Ma sono antipatici."
   },
   {
     "name": "♦ TARAMBULLA",
@@ -618,7 +618,7 @@ const rawNeologismsData = [
   {
     "name": "♦ TARTAGNASSA",
     "categoria": "frustrazioni digitali.",
-    "definizione": "protrarre una conversazione telefonica nonostante la linea molto disturbata. Gli interlocutori non si convincono che sarebbe meglio chiudere e richiamare, anzi continuano ostinati a parlare usando solo alcune inconfondibili frasi tipiche della tartagnassa: "Mi senti?" "No! ti sento a tratti…" "Io ti sento bene". "Ora ti sento… Pronto… Pronto?" "Ma io ti sento!" "No… non sento niente…""
+    "definizione": "protrarre una conversazione telefonica nonostante la linea molto disturbata. Gli interlocutori non si convincono che sarebbe meglio chiudere e richiamare, anzi continuano ostinati a parlare usando solo alcune inconfondibili frasi tipiche della tartagnassa: Mi senti? No! ti sento a tratti… Io ti sento bene. Ora ti sento… Pronto… Pronto? Ma io ti sento! No… non sento niente…"
   },
   {
     "name": "♦ TORCIMONIO",
@@ -697,27 +697,26 @@ const rawNeologismsData = [
   }
 ];
 
-// Transform and export the neologisms data
+// Transform and export the data
 export const neologisms: Neologism[] = transformNeologismData(rawNeologismsData);
 
 // Export utility functions
-export const getNeologismById = (id: number): Neologism | undefined => {
-  return neologisms.find(n => n.id === id);
-};
-
-export const getNeologismsByCategory = (categoria: string): Neologism[] => {
-  return neologisms.filter(n => n.categoria === categoria);
-};
-
 export const getCategories = (): string[] => {
-  return Array.from(new Set(neologisms.map(n => n.categoria))).sort();
+  const categories = Array.from(new Set(neologisms.map(n => n.categoria)));
+  return categories.filter(cat => cat && cat.trim() !== '').sort();
 };
 
-export const searchNeologisms = (query: string): Neologism[] => {
-  const lowercaseQuery = query.toLowerCase();
-  return neologisms.filter(n => 
-    n.name.toLowerCase().includes(lowercaseQuery) ||
-    n.definizione.toLowerCase().includes(lowercaseQuery) ||
-    n.categoria.toLowerCase().includes(lowercaseQuery)
-  );
+export const getNeologismsByCategory = (category: string): Neologism[] => {
+  return neologisms.filter(n => n.categoria === category);
 };
+
+export const searchNeologisms = (searchTerm: string, category: string = "all"): Neologism[] => {
+  return neologisms.filter(neologism => {
+    const matchesSearch = neologism.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         neologism.definizione.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = category === "all" || neologism.categoria === category;
+    return matchesSearch && matchesCategory && neologism.status === "Ready";
+  });
+};
+
+export default neologisms;
