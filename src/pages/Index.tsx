@@ -145,13 +145,13 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Scrollable Main Content Area */}
-      <div className="flex-1 overflow-hidden">
+      {/* Scrollable Main Content Area - Fixed Height Container */}
+      <div className="flex-1 min-h-0">
         <div className="container mx-auto px-4 py-8 h-full">
           <div className="grid lg:grid-cols-3 gap-8 h-full">
-            {/* Scrollable Neologisms List */}
-            <div className="lg:col-span-2 flex flex-col h-full">
-              {/* Search and Filter */}
+            {/* Left Column - Neologisms List with Fixed Height */}
+            <div className="lg:col-span-2 flex flex-col h-full min-h-0">
+              {/* Search and Filter - Fixed */}
               <div className="mb-6 flex-shrink-0">
                 <h2 className="text-2xl font-bold text-slate-800 mb-4">Esplora i Neologismi</h2>
                 <div className="flex flex-col md:flex-row gap-4">
@@ -180,10 +180,10 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Scrollable Neologisms with visible scrollbar */}
-              <div className="flex-1 min-h-0">
+              {/* Scrollable Frame for Neologisms */}
+              <div className="flex-1 border border-slate-200 rounded-lg bg-white/50 backdrop-blur-sm">
                 <ScrollArea className="h-full">
-                  <div className="space-y-4 pr-4">
+                  <div className="p-4 space-y-4">
                     {filteredNeologisms.map((neologism) => (
                       <div key={neologism.id} onClick={() => handleNeologismClick(neologism)}>
                         <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300 cursor-pointer hover:scale-[1.02]">
@@ -225,58 +225,60 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Sidebar with visible scrollbar */}
+            {/* Right Column - Sidebar with Fixed Height */}
             <div className="lg:col-span-1 flex flex-col h-full min-h-0">
-              <ScrollArea className="h-full">
-                <div className="space-y-6 pr-4">
-                  <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-xl text-slate-800">Categorie</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2">
-                        {categories.map((category) => {
-                          const count = neologisms.filter(n => n.categoria === category && n.status === "Ready").length;
-                          return (
-                            <div 
-                              key={category}
-                              className="flex justify-between items-center p-3 rounded-lg hover:bg-indigo-50 cursor-pointer transition-colors"
-                              onClick={() => setSelectedCategory(category)}
-                            >
-                              <span className="text-slate-700 font-medium">{category}</span>
-                              <Badge variant="outline" className="text-indigo-600 border-indigo-300">
-                                {count}
-                              </Badge>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </CardContent>
-                  </Card>
+              <div className="border border-slate-200 rounded-lg bg-white/50 backdrop-blur-sm h-full">
+                <ScrollArea className="h-full">
+                  <div className="p-4 space-y-6">
+                    <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
+                      <CardHeader>
+                        <CardTitle className="text-xl text-slate-800">Categorie</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {categories.map((category) => {
+                            const count = neologisms.filter(n => n.categoria === category && n.status === "Ready").length;
+                            return (
+                              <div 
+                                key={category}
+                                className="flex justify-between items-center p-3 rounded-lg hover:bg-indigo-50 cursor-pointer transition-colors"
+                                onClick={() => setSelectedCategory(category)}
+                              >
+                                <span className="text-slate-700 font-medium">{category}</span>
+                                <Badge variant="outline" className="text-indigo-600 border-indigo-300">
+                                  {count}
+                                </Badge>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </CardContent>
+                    </Card>
 
-                  <Card className="bg-slate-50 border-slate-200">
-                    <CardHeader>
-                      <CardTitle className="text-xl text-slate-800">Statistiche</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        <div className="flex justify-between">
-                          <span className="text-slate-600">Totale Neologismi:</span>
-                          <span className="font-bold text-indigo-600">{neologisms.filter(n => n.status === "Ready").length}</span>
+                    <Card className="bg-slate-50 border-slate-200">
+                      <CardHeader>
+                        <CardTitle className="text-xl text-slate-800">Statistiche</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-4">
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">Totale Neologismi:</span>
+                            <span className="font-bold text-indigo-600">{neologisms.filter(n => n.status === "Ready").length}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">Categorie:</span>
+                            <span className="font-bold text-indigo-600">{categories.length}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">Bozze:</span>
+                            <span className="font-bold text-orange-600">{neologisms.filter(n => n.status === "Draft").length}</span>
+                          </div>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-slate-600">Categorie:</span>
-                          <span className="font-bold text-indigo-600">{categories.length}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-slate-600">Bozze:</span>
-                          <span className="font-bold text-orange-600">{neologisms.filter(n => n.status === "Draft").length}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </ScrollArea>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </ScrollArea>
+              </div>
             </div>
           </div>
         </div>
