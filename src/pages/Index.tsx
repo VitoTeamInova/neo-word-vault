@@ -74,46 +74,47 @@ const Index = () => {
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Fixed Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 flex-shrink-0">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
-                Neologismi di Carlo D'Alatri
-              </h1>
-              <p className="text-slate-600 text-lg">
-                Una collezione di parole per descrivere l'indescrivibile
-              </p>
+      {/* TOP FRAME - Fixed Header with Featured Content and Controls */}
+      <div className="flex-none bg-white/80 backdrop-blur-sm border-b-2 border-slate-300">
+        {/* Header */}
+        <div className="border-b border-slate-200">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
+                  Neologismi di Carlo D'Alatri
+                </h1>
+                <p className="text-slate-600 text-lg">
+                  Una collezione di parole per descrivere l'indescrivibile
+                </p>
+              </div>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg transition-all duration-200 hover:shadow-xl"
+                  >
+                    <Plus className="w-5 h-5 mr-2" />
+                    Aggiungi Neologismo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold text-slate-800">
+                      Nuovo Neologismo
+                    </DialogTitle>
+                  </DialogHeader>
+                  <AddNeologismForm 
+                    onSubmit={handleAddNeologism}
+                    existingCategories={categories}
+                  />
+                </DialogContent>
+              </Dialog>
             </div>
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-              <DialogTrigger asChild>
-                <Button 
-                  size="lg" 
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg transition-all duration-200 hover:shadow-xl"
-                >
-                  <Plus className="w-5 h-5 mr-2" />
-                  Aggiungi Neologismo
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold text-slate-800">
-                    Nuovo Neologismo
-                  </DialogTitle>
-                </DialogHeader>
-                <AddNeologismForm 
-                  onSubmit={handleAddNeologism}
-                  existingCategories={categories}
-                />
-              </DialogContent>
-            </Dialog>
           </div>
         </div>
-      </header>
 
-      {/* Fixed Featured Neologism */}
-      <div className="bg-white/50 border-b border-slate-200 flex-shrink-0">
+        {/* Featured Neologism */}
         <div className="container mx-auto px-4 py-6">
           {displayedNeologism && (
             <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-xl border-0">
@@ -143,145 +144,81 @@ const Index = () => {
             </Card>
           )}
         </div>
-      </div>
 
-      {/* Scrollable Main Content Area - Fixed Height Container */}
-      <div className="flex-1 min-h-0">
-        <div className="container mx-auto px-4 py-8 h-full">
-          <div className="grid lg:grid-cols-3 gap-8 h-full">
-            {/* Left Column - Neologisms List with Fixed Height */}
-            <div className="lg:col-span-2 flex flex-col h-full min-h-0">
-              {/* Search and Filter - Fixed */}
-              <div className="mb-6 flex-shrink-0">
-                <h2 className="text-2xl font-bold text-slate-800 mb-4">Esplora i Neologismi</h2>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
-                    <Input
-                      placeholder="Cerca neologismi..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10 h-12 text-lg border-slate-300 focus:border-indigo-500"
-                    />
-                  </div>
-                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                    <SelectTrigger className="w-full md:w-64 h-12 text-lg border-slate-300">
-                      <SelectValue placeholder="Seleziona categoria" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white border-slate-200">
-                      <SelectItem value="all">Tutte le categorie</SelectItem>
-                      {categories.map((category) => (
-                        <SelectItem key={category} value={category}>
-                          {category}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              {/* Scrollable Frame for Neologisms */}
-              <div className="flex-1 border border-slate-200 rounded-lg bg-white/50 backdrop-blur-sm">
-                <ScrollArea className="h-full">
-                  <div className="p-4 space-y-4">
-                    {filteredNeologisms.map((neologism) => (
-                      <div key={neologism.id} onClick={() => handleNeologismClick(neologism)}>
-                        <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300 cursor-pointer hover:scale-[1.02]">
-                          <CardHeader className="pb-3">
-                            <div className="flex justify-between items-start gap-4">
-                              <CardTitle className="text-xl font-bold text-slate-800 leading-tight">
-                                {neologism.name}
-                              </CardTitle>
-                              <div className="flex flex-col gap-2 items-end">
-                                <Badge variant="outline" className="text-indigo-600 border-indigo-300 whitespace-nowrap">
-                                  {neologism.categoria}
-                                </Badge>
-                                <Badge className="bg-green-100 text-green-800 border-green-300 whitespace-nowrap">
-                                  {neologism.status}
-                                </Badge>
-                              </div>
-                            </div>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-slate-600 leading-relaxed">
-                              {getSummaryDescription(neologism.definizione)}
-                            </p>
-                            <p className="text-sm text-indigo-600 mt-2 opacity-70">
-                              Clicca per visualizzare in evidenza
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    ))}
-                    {filteredNeologisms.length === 0 && (
-                      <Card className="p-8 text-center">
-                        <p className="text-slate-500 text-lg">
-                          Nessun neologismo trovato con i criteri di ricerca attuali.
-                        </p>
-                      </Card>
-                    )}
-                  </div>
-                </ScrollArea>
-              </div>
+        {/* Search and Filter Controls */}
+        <div className="container mx-auto px-4 py-6">
+          <h2 className="text-2xl font-bold text-slate-800 mb-4">Esplora i Neologismi</h2>
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+              <Input
+                placeholder="Cerca neologismi..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 h-12 text-lg border-slate-300 focus:border-indigo-500"
+              />
             </div>
-
-            {/* Right Column - Sidebar with Fixed Height */}
-            <div className="lg:col-span-1 flex flex-col h-full min-h-0">
-              <div className="border border-slate-200 rounded-lg bg-white/50 backdrop-blur-sm h-full">
-                <ScrollArea className="h-full">
-                  <div className="p-4 space-y-6">
-                    <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
-                      <CardHeader>
-                        <CardTitle className="text-xl text-slate-800">Categorie</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-2">
-                          {categories.map((category) => {
-                            const count = neologisms.filter(n => n.categoria === category && n.status === "Ready").length;
-                            return (
-                              <div 
-                                key={category}
-                                className="flex justify-between items-center p-3 rounded-lg hover:bg-indigo-50 cursor-pointer transition-colors"
-                                onClick={() => setSelectedCategory(category)}
-                              >
-                                <span className="text-slate-700 font-medium">{category}</span>
-                                <Badge variant="outline" className="text-indigo-600 border-indigo-300">
-                                  {count}
-                                </Badge>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-slate-50 border-slate-200">
-                      <CardHeader>
-                        <CardTitle className="text-xl text-slate-800">Statistiche</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-4">
-                          <div className="flex justify-between">
-                            <span className="text-slate-600">Totale Neologismi:</span>
-                            <span className="font-bold text-indigo-600">{neologisms.filter(n => n.status === "Ready").length}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-slate-600">Categorie:</span>
-                            <span className="font-bold text-indigo-600">{categories.length}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-slate-600">Bozze:</span>
-                            <span className="font-bold text-orange-600">{neologisms.filter(n => n.status === "Draft").length}</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </ScrollArea>
-              </div>
-            </div>
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full md:w-64 h-12 text-lg border-slate-300">
+                <SelectValue placeholder="Seleziona categoria" />
+              </SelectTrigger>
+              <SelectContent className="bg-white border-slate-200">
+                <SelectItem value="all">Tutte le categorie</SelectItem>
+                {categories.map((category) => (
+                  <SelectItem key={category} value={category}>
+                    {category}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
+      </div>
+
+      {/* BOTTOM FRAME - Scrollable Neologisms List */}
+      <div className="flex-1 min-h-0 bg-white/50 backdrop-blur-sm">
+        <ScrollArea className="h-full w-full">
+          <div className="container mx-auto px-4 py-6">
+            <div className="space-y-4">
+              {filteredNeologisms.map((neologism) => (
+                <div key={neologism.id} onClick={() => handleNeologismClick(neologism)}>
+                  <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-200 border-slate-200 hover:border-indigo-300 cursor-pointer hover:scale-[1.02]">
+                    <CardHeader className="pb-3">
+                      <div className="flex justify-between items-start gap-4">
+                        <CardTitle className="text-xl font-bold text-slate-800 leading-tight">
+                          {neologism.name}
+                        </CardTitle>
+                        <div className="flex flex-col gap-2 items-end">
+                          <Badge variant="outline" className="text-indigo-600 border-indigo-300 whitespace-nowrap">
+                            {neologism.categoria}
+                          </Badge>
+                          <Badge className="bg-green-100 text-green-800 border-green-300 whitespace-nowrap">
+                            {neologism.status}
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slate-600 leading-relaxed">
+                        {getSummaryDescription(neologism.definizione)}
+                      </p>
+                      <p className="text-sm text-indigo-600 mt-2 opacity-70">
+                        Clicca per visualizzare in evidenza
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+              {filteredNeologisms.length === 0 && (
+                <Card className="p-8 text-center">
+                  <p className="text-slate-500 text-lg">
+                    Nessun neologismo trovato con i criteri di ricerca attuali.
+                  </p>
+                </Card>
+              )}
+            </div>
+          </div>
+        </ScrollArea>
       </div>
     </div>
   );
