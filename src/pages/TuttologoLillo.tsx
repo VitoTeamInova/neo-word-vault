@@ -22,6 +22,14 @@ const TuttologoLillo = () => {
         {/* Main Content */}
         <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-xl">
           <CardHeader className="text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-t-lg relative">
+            {/* Logo in top left corner */}
+            <div className="absolute top-4 left-4">
+              <img 
+                src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
+                alt="Carlo D'Alatri Logo" 
+                className="w-16 h-16 rounded-lg shadow-lg"
+              />
+            </div>
             <CardTitle className="text-4xl font-bold mb-2">
               Tuttologo
             </CardTitle>
