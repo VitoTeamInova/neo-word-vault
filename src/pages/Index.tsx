@@ -86,7 +86,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
                   alt="Carlo D'Alatri Logo" 
-                  className="w-16 h-16 rounded-lg shadow-lg"
+                  className="w-24 h-24 rounded-lg shadow-lg"
                 />
                 <div>
                   <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
