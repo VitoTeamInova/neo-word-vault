@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +14,7 @@ const sampleNeologisms = [
     id: 1,
     name: "♦ BOFFOLOTTO",
     categoria: "teatrini quotidiani",
-    definizione: "regalare un oggetto ricevuto in regalo spacciandolo per nuovo. Ce lo avevano donato a Natale, ma non lo abbiamo mai utilizzato. La casa, già gonfia di cose inservibili, con i suoi pochi spazi residui ne farebbe volentieri a meno. Finisce così solo per dare fastidio, accantonato nel limbo delle inutilerie, insieme a bollitori dell'acqua, spremiagrumi, e porta -incensi, fino a quell'inaspettato giorno che il destino lo promuove a nuova gloria. Spolverato e messo a nuovo, incar tocciato nella nuova disonesta confezione, la meno sospetta possibile, con tanto di fiocchetto, è ora pronto per esser rifilato. come una falsa banconota, al festeggiato di turno. Fare un boffolotto vuol dire liberare spazio nella propria casa, risparmiare tempo e soldi, in nome dell'eco-sostenibilità, del riciclo e di un po' di sana taccagneria.",
+    definizione: "regalare un oggetto ricevuto in regalo spacciandolo per nuovo. Ce lo avevamo donato a Natale, ma non lo abbiamo mai utilizzato. La casa, già gonfia di cose inservibili, con i suoi pochi spazi residui ne farebbe volentieri a meno. Finisce così solo per dare fastidio, accantonato nel limbo delle inutilerie, insieme a bollitori dell'acqua, spremiagrumi, e porta -incensi, fino a quell'inaspettato giorno che il destino lo promuove a nuova gloria. Spolverato e messo a nuovo, incar tocciato nella nuova disonesta confezione, la meno sospetta possibile, con tanto di fiocchetto, è ora pronto per esser rifilato. come una falsa banconota, al festeggiato di turno. Fare un boffolotto vuol dire liberare spazio nella propria casa, risparmiare tempo e soldi, in nome dell'eco-sostenibilità, del riciclo e di un po' di sana taccagneria.",
     status: "Ready"
   },
   {
@@ -64,7 +63,7 @@ const sampleNeologisms = [
     id: 8,
     name: "♦ CATACRIMITOMORFISMO",
     categoria: "frustrazioni digitali",
-    definizione: "frequente difficoltà a distinguere lo zero dalla lettera "O" quando si digita una password. 36",
+    definizione: "frequente difficoltà a distinguere lo zero dalla lettera 'O' quando si digita una password. 36",
     status: "Ready"
   },
   {
