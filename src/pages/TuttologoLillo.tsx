@@ -21,11 +21,19 @@ const TuttologoLillo = () => {
 
         {/* Main Content */}
         <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-xl">
-          <CardHeader className="text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-t-lg">
+          <CardHeader className="text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-t-lg relative">
             <CardTitle className="text-4xl font-bold mb-2">
               Tuttologo
             </CardTitle>
             <p className="text-xl opacity-90">Lillo</p>
+            {/* Logo in top right corner */}
+            <div className="absolute top-4 right-4">
+              <img 
+                src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
+                alt="Carlo D'Alatri Logo" 
+                className="w-16 h-16 rounded-lg shadow-lg"
+              />
+            </div>
           </CardHeader>
           <CardContent className="p-8">
             <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
@@ -47,10 +55,33 @@ const TuttologoLillo = () => {
                 agio e dove abbiamo passato delle serate indimenticabili.
               </p>
               
-              <p className="mb-0">
+              <p className="mb-6">
                 Quando abbiamo creato, ormai moltissimi anni fa, la nostra trasmissione radiofonica "610" 
                 non potevamo non ricordarci della creatività demenziale e surreale di Carlo D'Alatri che 
                 ormai è una colonna portante del nostro programma.
+              </p>
+
+              <p className="mb-6">
+                Carlo è il vero "Tuttologo" di 610, mantenendo rigorosamente la stessa voce (cosa 
+                che mi diverte tantissimo) ha interpretato e continuerà ad interpretare tantissimi assurdi 
+                personaggi per 610, dal cantante che utilizza gli spazi musicali e non cantati delle canzoni per 
+                infilarci brevi spot pubblicitari, all'inventore di invenzioni inutili tipo l'ombrello senza stoffa per 
+                farsi vedere dall'alto, dal cantautore bipolare che passa da una strofa triste ad una allegra 
+                nell'ambito dello stesso brano al compositore di inni su commissione: vuoi un inno al tuo scooter? 
+                Lui te lo scrive. Fino ad arrivare a uno dei miei preferiti che è l'inventore di neologismi. Credo 
+                che questo sia il primo caso di un'idea completamente fuori di testa che in realtà 
+                potrebbe avere una grande utilità sociale.
+              </p>
+
+              <p className="mb-6">
+                Come chiamare l'atto di seguire una persona con le chiavi in mano nei pressi di un parcheggio 
+                nella speranza che esca lasciando il posto libero per la tua auto? Bè, Carlo D'Alatri è in grado di 
+                trasformare questa lunga azione non descrivibile se non spiegandola così come l'ho scritta, in un 
+                unico e inequivocabile verbo: archifittare!
+              </p>
+
+              <p className="mb-0 font-medium">
+                Geniale, divertente e… utile!!!!!!!!!!!
               </p>
               
               <p className="text-right mt-8 text-xl font-bold text-indigo-600">
