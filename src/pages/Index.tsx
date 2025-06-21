@@ -86,6 +86,7 @@ const Index = () => {
                   selectedCategory={selectedCategory}
                   setSelectedCategory={setSelectedCategory}
                   categories={categories}
+                  onRandomNeologism={handleRandomNeologism}
                 />
               </div>
             </div>

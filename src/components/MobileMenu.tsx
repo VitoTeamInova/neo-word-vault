@@ -10,12 +10,14 @@ interface MobileMenuProps {
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
   categories: string[];
+  onRandomNeologism?: () => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
   selectedCategory,
   setSelectedCategory,
-  categories
+  categories,
+  onRandomNeologism
 }) => {
   return (
     <Drawer>
@@ -43,6 +45,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             >
               Tuttologo - Lillo
             </Link>
+            {onRandomNeologism && (
+              <button
+                onClick={onRandomNeologism}
+                className="block text-indigo-600 hover:text-indigo-800 hover:underline transition-colors py-2 text-left"
+              >
+                Uno a Caso
+              </button>
+            )}
           </div>
           
           {/* Category Filter */}
