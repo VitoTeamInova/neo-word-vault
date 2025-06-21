@@ -19,7 +19,7 @@ const Index = () => {
   // Get unique categories
   const categories = getCategories();
 
-  // Filter neologisms based on category only (removed search functionality)
+  // Filter neologisms based on category only
   const filteredNeologisms = useMemo(() => {
     return neologisms.filter(neologism => {
       const matchesCategory = selectedCategory === "all" || neologism.categoria === selectedCategory;
@@ -39,6 +39,16 @@ const Index = () => {
   const handleNeologismClick = (neologism: any) => {
     setSelectedNeologism(neologism);
     setIsDetailDialogOpen(true);
+  };
+
+  const handleRandomNeologism = () => {
+    const readyNeologisms = neologisms.filter(n => n.status === "Ready");
+    if (readyNeologisms.length > 0) {
+      const randomIndex = Math.floor(Math.random() * readyNeologisms.length);
+      const randomNeologism = readyNeologisms[randomIndex];
+      setSelectedNeologism(randomNeologism);
+      setIsDetailDialogOpen(true);
+    }
   };
 
   const getSummaryDescription = (description: string) => {
@@ -95,6 +105,12 @@ const Index = () => {
                 >
                   Tuttologo - Lillo
                 </Link>
+                <button
+                  onClick={handleRandomNeologism}
+                  className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                >
+                  Uno a Caso
+                </button>
               </div>
             </nav>
 

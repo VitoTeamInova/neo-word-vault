@@ -1,8 +1,6 @@
 
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Plus } from "lucide-react";
 import AddNeologismForm from "@/components/AddNeologismForm";
 
 interface FooterProps {
@@ -45,14 +43,20 @@ const Footer: React.FC<FooterProps> = ({ onAddNeologism, categories }) => {
             </p>
           </div>
 
-          {/* Center - Add Neologism Button */}
+          {/* Center - Add Neologism Link */}
           <div className="flex-shrink-0">
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
-                  <Plus className="w-4 h-4 mr-2" />
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsDialogOpen(true);
+                  }}
+                  className="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold"
+                >
                   Aggiungi Neologismo
-                </Button>
+                </a>
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +15,7 @@ interface AddNeologismFormProps {
 
 const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingCategories }) => {
   const [formData, setFormData] = useState({
-    name: '',
+    neologismName: '',
     categoria: '',
     definizione: '',
     image: '',
@@ -30,7 +29,7 @@ const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingC
     e.preventDefault();
     
     // Validation
-    if (!formData.name.trim()) {
+    if (!formData.neologismName.trim()) {
       toast({
         title: "Errore",
         description: "Il nome del neologismo è obbligatorio",
@@ -57,7 +56,14 @@ const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingC
       return;
     }
 
-    onSubmit(formData);
+    // Convert neologismName to name for submission
+    const submissionData = {
+      ...formData,
+      name: formData.neologismName,
+      neologismName: undefined
+    };
+    
+    onSubmit(submissionData);
     
     toast({
       title: "Successo!",
@@ -66,7 +72,7 @@ const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingC
 
     // Reset form
     setFormData({
-      name: '',
+      neologismName: '',
       categoria: '',
       definizione: '',
       image: '',
@@ -103,13 +109,14 @@ const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingC
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-sm font-medium text-slate-700">
+          <Label htmlFor="neologismName" className="text-sm font-medium text-slate-700">
             Neologismo *
           </Label>
           <Input
-            id="name"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            id="neologismName"
+            name="neologismName"
+            value={formData.neologismName}
+            onChange={(e) => setFormData({ ...formData, neologismName: e.target.value })}
             placeholder="Inserisci il nome del neologismo"
             className="border-slate-300 focus:border-indigo-500"
             required
@@ -230,15 +237,15 @@ const AddNeologismForm: React.FC<AddNeologismFormProps> = ({ onSubmit, existingC
       </div>
 
       {/* Preview Card */}
-      {(formData.name || formData.categoria || formData.definizione) && (
+      {(formData.neologismName || formData.categoria || formData.definizione) && (
         <Card className="bg-slate-50 border-slate-200">
           <CardHeader>
             <CardTitle className="text-lg text-slate-800">Anteprima</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {formData.name && (
-                <h3 className="text-xl font-bold text-slate-800">{formData.name}</h3>
+              {formData.neologismName && (
+                <h3 className="text-xl font-bold text-slate-800">{formData.neologismName}</h3>
               )}
               {formData.categoria && (
                 <Badge variant="outline" className="text-indigo-600 border-indigo-300">
