@@ -1,40 +1,31 @@
 
 import React, { useState, useMemo } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Search, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-import AddNeologismForm from "@/components/AddNeologismForm";
-import NeologismCard from "@/components/NeologismCard";
 import MobileMenu from "@/components/MobileMenu";
 import NeologismDetailDialog from "@/components/NeologismDetailDialog";
+import Footer from "@/components/Footer";
 import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms";
 
 const Index = () => {
   const [neologisms, setNeologisms] = useState(importedNeologisms);
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedNeologism, setSelectedNeologism] = useState(null);
   const [isDetailDialogOpen, setIsDetailDialogOpen] = useState(false);
 
   // Get unique categories
   const categories = getCategories();
 
-  // Filter neologisms based on search and category
+  // Filter neologisms based on category only (removed search functionality)
   const filteredNeologisms = useMemo(() => {
     return neologisms.filter(neologism => {
-      const matchesSearch = neologism.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           neologism.definizione.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === "all" || neologism.categoria === selectedCategory;
-      return matchesSearch && matchesCategory && neologism.status === "Ready";
+      return matchesCategory && neologism.status === "Ready";
     });
-  }, [neologisms, searchTerm, selectedCategory]);
+  }, [neologisms, selectedCategory]);
 
   const handleAddNeologism = (newNeologism: any) => {
     const neologismWithId = {
@@ -43,7 +34,6 @@ const Index = () => {
       status: "Draft"
     };
     setNeologisms([...neologisms, neologismWithId]);
-    setIsDialogOpen(false);
   };
 
   const handleNeologismClick = (neologism: any) => {
@@ -61,14 +51,14 @@ const Index = () => {
       <div className="flex-none bg-white/80 backdrop-blur-sm border-b-2 border-slate-300">
         <div className="container mx-auto px-4 py-3 md:py-6">
           <div className="flex flex-col gap-4">
-            {/* Top Row: Logo, Title, and Add Button */}
+            {/* Top Row: Logo, Title, and Mobile Menu */}
             <div className="flex justify-between items-center gap-4">
               <div className="flex items-center gap-4 min-w-0 flex-1">
                 {/* Logo */}
                 <img 
                   src="/lovable-uploads/9b659a1c-cbfc-401e-a9d8-8e78ee956a66.png" 
                   alt="Carlo D'Alatri Logo" 
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-lg shadow-lg flex-shrink-0"
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-lg shadow-lg flex-shrink-0"
                 />
                 <div className="min-w-0 flex-1">
                   <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-1 md:mb-2 leading-tight">
@@ -83,39 +73,10 @@ const Index = () => {
               {/* Mobile Menu */}
               <div className="md:hidden">
                 <MobileMenu
-                  searchTerm={searchTerm}
-                  setSearchTerm={setSearchTerm}
                   selectedCategory={selectedCategory}
                   setSelectedCategory={setSelectedCategory}
                   categories={categories}
-                  onAddNeologism={() => setIsDialogOpen(true)}
                 />
-              </div>
-
-              {/* Desktop Add Button */}
-              <div className="hidden md:block">
-                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                  <DialogTrigger asChild>
-                    <Button 
-                      size="lg" 
-                      className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg transition-all duration-200 hover:shadow-xl"
-                    >
-                      <Plus className="w-5 h-5 mr-2" />
-                      Aggiungi Neologismo
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-slate-800">
-                        Nuovo Neologismo
-                      </DialogTitle>
-                    </DialogHeader>
-                    <AddNeologismForm 
-                      onSubmit={handleAddNeologism}
-                      existingCategories={categories}
-                    />
-                  </DialogContent>
-                </Dialog>
               </div>
             </div>
 
@@ -137,38 +98,26 @@ const Index = () => {
               </div>
             </nav>
 
-            {/* Desktop Search and Filter Controls */}
-            <div className="hidden md:block">
-              <h2 className="text-2xl font-bold text-slate-800 mb-4">Esplora i Neologismi</h2>
-              <div className="flex gap-4">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
-                  <Input
-                    placeholder="Cerca neologismi..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 h-12 text-lg border-slate-300 focus:border-indigo-500"
-                  />
+            {/* Section Title with Category Filter */}
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <h2 className="text-lg md:text-2xl font-bold text-slate-800">Esplora i Neologismi</h2>
+                <div className="w-full sm:w-64">
+                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <SelectTrigger className="h-10 md:h-12 text-sm md:text-lg border-slate-300">
+                      <SelectValue placeholder="Seleziona categoria" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border-slate-200">
+                      <SelectItem value="all">Tutte le categorie</SelectItem>
+                      {categories.map((category) => (
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-64 h-12 text-lg border-slate-300">
-                    <SelectValue placeholder="Seleziona categoria" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white border-slate-200">
-                    <SelectItem value="all">Tutte le categorie</SelectItem>
-                    {categories.map((category) => (
-                      <SelectItem key={category} value={category}>
-                        {category}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
-            </div>
-
-            {/* Mobile Search Title */}
-            <div className="md:hidden">
-              <h2 className="text-lg font-bold text-slate-800">Esplora i Neologismi</h2>
             </div>
           </div>
         </div>
@@ -219,6 +168,9 @@ const Index = () => {
           </div>
         </ScrollArea>
       </div>
+
+      {/* Footer */}
+      <Footer onAddNeologism={handleAddNeologism} categories={categories} />
 
       {/* Neologism Detail Dialog */}
       <NeologismDetailDialog

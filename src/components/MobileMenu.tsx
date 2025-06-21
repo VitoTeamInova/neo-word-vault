@@ -1,28 +1,21 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
-import { Search, Menu, Plus } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
   categories: string[];
-  onAddNeologism: () => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
-  searchTerm,
-  setSearchTerm,
   selectedCategory,
   setSelectedCategory,
-  categories,
-  onAddNeologism
+  categories
 }) => {
   return (
     <Drawer>
@@ -52,17 +45,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             </Link>
           </div>
           
-          {/* Search */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
-            <Input
-              placeholder="Cerca neologismi..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-          
           {/* Category Filter */}
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className="w-full">
@@ -77,15 +59,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               ))}
             </SelectContent>
           </Select>
-          
-          {/* Add Button */}
-          <Button 
-            onClick={onAddNeologism}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            Aggiungi Neologismo
-          </Button>
         </div>
       </DrawerContent>
     </Drawer>
