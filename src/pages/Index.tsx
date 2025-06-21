@@ -1,14 +1,16 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
-import NeologismDetailDialog from "@/components/NeologismDetailDialog";
-import Footer from "@/components/Footer";
 import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms";
+
+// Dynamic imports for heavy components
+const NeologismDetailDialog = React.lazy(() => import("@/components/NeologismDetailDialog"));
+const Footer = React.lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   const [neologisms, setNeologisms] = useState(importedNeologisms);
@@ -186,15 +188,19 @@ const Index = () => {
         </ScrollArea>
       </div>
 
-      {/* Footer */}
-      <Footer onAddNeologism={handleAddNeologism} categories={categories} />
+      {/* Footer with Suspense */}
+      <Suspense fallback={<div className="h-16 bg-white"></div>}>
+        <Footer onAddNeologism={handleAddNeologism} categories={categories} />
+      </Suspense>
 
-      {/* Neologism Detail Dialog */}
-      <NeologismDetailDialog
-        neologism={selectedNeologism}
-        isOpen={isDetailDialogOpen}
-        onClose={() => setIsDetailDialogOpen(false)}
-      />
+      {/* Neologism Detail Dialog with Suspense */}
+      <Suspense fallback={null}>
+        <NeologismDetailDialog
+          neologism={selectedNeologism}
+          isOpen={isDetailDialogOpen}
+          onClose={() => setIsDetailDialogOpen(false)}
+        />
+      </Suspense>
     </div>
   );
 };
