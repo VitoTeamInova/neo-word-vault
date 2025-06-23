@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,18 +18,30 @@ const Index = () => {
   const [selectedNeologism, setSelectedNeologism] = useState(null);
   const [isDetailDialogOpen, setIsDetailDialogOpen] = useState(false);
 
+  console.log("Total neologisms loaded:", neologisms.length);
+  console.log("Selected category:", selectedCategory);
+
   // Get unique categories
   const categories = getCategories();
+  console.log("Available categories:", categories);
 
-  // Filter neologisms based on category and show all entries when "all" is selected
+  // Filter neologisms based on category
   const filteredNeologisms = useMemo(() => {
-    return neologisms.filter(neologism => {
+    const filtered = neologisms.filter(neologism => {
+      // Category filter
       const matchesCategory = selectedCategory === "all" || neologism.Categoria === selectedCategory;
-      // When "all" categories is selected, show all entries regardless of status
-      // Otherwise, only show "Ready" entries
-      const matchesStatus = selectedCategory === "all" || neologism.status === "Ready";
+      
+      // Status filter: when "all" is selected, only show Ready entries
+      // When specific category is selected, show all entries from that category
+      const matchesStatus = selectedCategory === "all" ? neologism.status === "Ready" : true;
+      
       return matchesCategory && matchesStatus;
     });
+    
+    console.log("Filtered neologisms count:", filtered.length);
+    console.log("Sample filtered neologisms:", filtered.slice(0, 3));
+    
+    return filtered;
   }, [neologisms, selectedCategory]);
 
   const handleAddNeologism = (newNeologism: any) => {
