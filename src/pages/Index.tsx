@@ -28,8 +28,11 @@ const Index = () => {
   // Filter neologisms based on category
   const filteredNeologisms = useMemo(() => {
     const filtered = neologisms.filter(neologism => {
+      // Clean up the neologism category for comparison (take first line only)
+      const cleanNeologismCategory = neologism.Categoria ? neologism.Categoria.split('\n')[0].trim() : '';
+      
       // Category filter
-      const matchesCategory = selectedCategory === "all" || neologism.Categoria === selectedCategory;
+      const matchesCategory = selectedCategory === "all" || cleanNeologismCategory === selectedCategory;
       
       // Status filter: when "all" is selected, only show Ready entries
       // When specific category is selected, show all entries from that category
