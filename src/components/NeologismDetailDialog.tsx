@@ -3,14 +3,7 @@ import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-interface Neologism {
-  id: number;
-  name: string;
-  categoria: string;
-  definizione: string;
-  status: string;
-}
+import { Neologism } from "@/types/neologism";
 
 interface NeologismDetailDialogProps {
   neologism: Neologism | null;
@@ -44,11 +37,11 @@ const NeologismDetailDialog: React.FC<NeologismDetailDialogProps> = ({
         <DialogHeader>
           <div className="flex justify-between items-start gap-4">
             <DialogTitle className="text-2xl font-bold text-slate-800 leading-tight">
-              {neologism.name}
+              {neologism.Neologismo}
             </DialogTitle>
             <div className="flex flex-col gap-2 items-end flex-shrink-0">
               <Badge variant="outline" className="text-indigo-600 border-indigo-300 whitespace-nowrap">
-                {neologism.categoria}
+                {neologism.Categoria}
               </Badge>
               <Badge className={`${getStatusColor(neologism.status)} whitespace-nowrap`}>
                 {neologism.status}
@@ -59,8 +52,13 @@ const NeologismDetailDialog: React.FC<NeologismDetailDialogProps> = ({
         <ScrollArea className="max-h-[60vh] pr-4">
           <div className="space-y-4">
             <p className="text-slate-600 leading-relaxed text-lg">
-              {neologism.definizione}
+              {neologism.Definizione}
             </p>
+            {neologism.Detagli && (
+              <p className="text-slate-600 leading-relaxed text-base">
+                {neologism.Detagli}
+              </p>
+            )}
           </div>
         </ScrollArea>
       </DialogContent>

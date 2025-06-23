@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
-import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms";
+import { neologisms as importedNeologisms, getCategories } from "@/data/neologisms-new";
 
 // Dynamic imports for heavy components
 const NeologismDetailDialog = React.lazy(() => import("@/components/NeologismDetailDialog"));
@@ -24,7 +23,7 @@ const Index = () => {
   // Filter neologisms based on category only
   const filteredNeologisms = useMemo(() => {
     return neologisms.filter(neologism => {
-      const matchesCategory = selectedCategory === "all" || neologism.categoria === selectedCategory;
+      const matchesCategory = selectedCategory === "all" || neologism.Categoria === selectedCategory;
       return matchesCategory && neologism.status === "Ready";
     });
   }, [neologisms, selectedCategory]);
@@ -54,7 +53,7 @@ const Index = () => {
   };
 
   const getSummaryDescription = (description: string) => {
-    return description.length > 15 ? description.substring(0, 15) + "..." : description;
+    return description;
   };
 
   return (
@@ -153,11 +152,11 @@ const Index = () => {
                     <CardHeader className="pb-2 md:pb-3">
                       <div className="flex justify-between items-start gap-2 md:gap-4">
                         <CardTitle className="text-lg md:text-xl font-bold text-slate-800 leading-tight">
-                          {neologism.name}
+                          {neologism.Neologismo}
                         </CardTitle>
                         <div className="flex flex-col gap-1 md:gap-2 items-end flex-shrink-0">
                           <Badge variant="outline" className="text-indigo-600 border-indigo-300 whitespace-nowrap text-xs md:text-sm">
-                            {neologism.categoria}
+                            {neologism.Categoria}
                           </Badge>
                           <Badge className="bg-green-100 text-green-800 border-green-300 whitespace-nowrap text-xs md:text-sm">
                             {neologism.status}
@@ -167,7 +166,7 @@ const Index = () => {
                     </CardHeader>
                     <CardContent className="pt-0">
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        {getSummaryDescription(neologism.definizione)}
+                        {neologism.Definizione}
                       </p>
                       <p className="text-xs md:text-sm text-indigo-600 mt-1 md:mt-2 opacity-70">
                         Clicca per visualizzare dettagli completi

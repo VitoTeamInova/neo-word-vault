@@ -2,14 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
-interface Neologism {
-  id: number;
-  name: string;
-  categoria: string;
-  definizione: string;
-  status: string;
-}
+import { Neologism } from "@/types/neologism";
 
 interface NeologismCardProps {
   neologism: Neologism;
@@ -34,11 +27,11 @@ const NeologismCard: React.FC<NeologismCardProps> = ({ neologism }) => {
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start gap-4">
           <CardTitle className="text-xl font-bold text-slate-800 leading-tight">
-            {neologism.name}
+            {neologism.Neologismo}
           </CardTitle>
           <div className="flex flex-col gap-2 items-end">
             <Badge variant="outline" className="text-indigo-600 border-indigo-300 whitespace-nowrap">
-              {neologism.categoria}
+              {neologism.Categoria}
             </Badge>
             <Badge className={`${getStatusColor(neologism.status)} whitespace-nowrap`}>
               {neologism.status}
@@ -48,10 +41,7 @@ const NeologismCard: React.FC<NeologismCardProps> = ({ neologism }) => {
       </CardHeader>
       <CardContent>
         <p className="text-slate-600 leading-relaxed">
-          {neologism.definizione.length > 300 
-            ? `${neologism.definizione.substring(0, 300)}...` 
-            : neologism.definizione
-          }
+          {neologism.Definizione}
         </p>
         <p className="text-sm text-indigo-600 mt-2 opacity-70">
           Clicca per visualizzare in evidenza
