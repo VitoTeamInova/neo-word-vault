@@ -20,11 +20,14 @@ const Index = () => {
   // Get unique categories
   const categories = getCategories();
 
-  // Filter neologisms based on category only
+  // Filter neologisms based on category and show all entries when "all" is selected
   const filteredNeologisms = useMemo(() => {
     return neologisms.filter(neologism => {
       const matchesCategory = selectedCategory === "all" || neologism.Categoria === selectedCategory;
-      return matchesCategory && neologism.status === "Ready";
+      // When "all" categories is selected, show all entries regardless of status
+      // Otherwise, only show "Ready" entries
+      const matchesStatus = selectedCategory === "all" || neologism.status === "Ready";
+      return matchesCategory && matchesStatus;
     });
   }, [neologisms, selectedCategory]);
 
