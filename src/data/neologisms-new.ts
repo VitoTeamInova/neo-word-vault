@@ -6,6 +6,12 @@ import completeData from "./complete-neologisms.json";
 export const neologisms: Neologism[] = completeData as Neologism[];
 
 export const getCategories = (): string[] => {
-  const categories = Array.from(new Set(neologisms.map(n => n.Categoria)));
+  // Filter out any invalid or malformed categories
+  const categories = Array.from(new Set(
+    neologisms
+      .map(n => n.Categoria)
+      .filter(category => category && typeof category === 'string' && category.trim().length > 0)
+      .map(category => category.trim()) // Clean up any whitespace
+  ));
   return categories.sort();
 };
