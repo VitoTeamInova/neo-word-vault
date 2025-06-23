@@ -1,6 +1,6 @@
 
 import { Neologism } from "@/types/neologism";
-import completeData from "./complete-neologisms.json";
+import completeData from "./complete-neologisms-corrected.json";
 
 // Cast the imported JSON data to our Neologism type
 export const neologisms: Neologism[] = completeData as Neologism[];
