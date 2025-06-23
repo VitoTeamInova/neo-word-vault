@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -34,11 +33,9 @@ const Index = () => {
       // Category filter
       const matchesCategory = selectedCategory === "all" || cleanNeologismCategory === selectedCategory;
       
-      // Status filter: when "all" is selected, only show Ready entries
+      // When "all" is selected, show all neologisms regardless of status
       // When specific category is selected, show all entries from that category
-      const matchesStatus = selectedCategory === "all" ? neologism.status === "Ready" : true;
-      
-      return matchesCategory && matchesStatus;
+      return matchesCategory;
     });
     
     console.log("Filtered neologisms count:", filtered.length);
