@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -59,12 +60,15 @@ const Index = () => {
   };
 
   const handleRandomNeologism = () => {
-    const readyNeologisms = neologisms.filter(n => n.status === "Ready");
-    if (readyNeologisms.length > 0) {
-      const randomIndex = Math.floor(Math.random() * readyNeologisms.length);
-      const randomNeologism = readyNeologisms[randomIndex];
+    // Use all available neologisms for random selection instead of filtering by status
+    if (neologisms.length > 0) {
+      const randomIndex = Math.floor(Math.random() * neologisms.length);
+      const randomNeologism = neologisms[randomIndex];
+      console.log("Selected random neologism:", randomNeologism);
       setSelectedNeologism(randomNeologism);
       setIsDetailDialogOpen(true);
+    } else {
+      console.log("No neologisms available for random selection");
     }
   };
 
